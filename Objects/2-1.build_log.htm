@@ -1,0 +1,72 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information:  ,  , LIC=P6F5U-SC43K-NTE3G-VGAUX-36TJT-KCQ3N
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\billy\Documents\stm32Projectsp\2-1.uvprojx
+Project File Date:  09/28/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Target 1'
+compiling Key.c...
+.\System\general.h(7): warning:  #1-D: last line of file ends without a newline
+  #endif
+Device\Key.c: 1 warning, 0 errors
+compiling LED.c...
+.\System\general.h(7): warning:  #1-D: last line of file ends without a newline
+  #endif
+Device\LED.c: 1 warning, 0 errors
+compiling main.c...
+.\System\Timer.h(7): warning:  #1-D: last line of file ends without a newline
+  #endif
+User\main.c: 1 warning, 0 errors
+compiling Serial.c...
+.\System\general.h(7): warning:  #1-D: last line of file ends without a newline
+  #endif
+Device\Serial.c: 1 warning, 0 errors
+compiling oled.c...
+linking...
+.\Objects\2-1.axf: Error: L6218E: Undefined symbol Timer_Init (referred from main.o).
+.\Objects\2-1.axf: Error: L6218E: Undefined symbol cnt (referred from main.o).
+.\Objects\2-1.axf: Error: L6218E: Undefined symbol GPIO_startUp (referred from key.o).
+.\Objects\2-1.axf: Error: L6218E: Undefined symbol NVIC_startUp (referred from serial.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 4 error messages.
+".\Objects\2-1.axf" - 4 Error(s), 4 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil.STM32F1xx_DFP.2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  C:/Keil_v5/ARM/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
