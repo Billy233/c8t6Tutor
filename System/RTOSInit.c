@@ -55,9 +55,10 @@ void RTOS_Init(void)
 
 void startTask(void *pvParameters)
 {
+    static TickType_t period = 500;
     taskENTER_CRITICAL(); // 进入临界区,防止创建任务期间被打断
     Task1_Handler = xTaskCreateStatic((TaskFunction_t)task1, "Task1",
-                                      TASK_1_STACK_SIZE, NULL, TASK_1_PRIORITY,
+                                      TASK_1_STACK_SIZE, (void*)&period, TASK_1_PRIORITY,
                                       task1_Stack, &task1_TCB);
 
     Task2_Handler = xTaskCreateStatic((TaskFunction_t)task2, "Task2",
@@ -69,18 +70,20 @@ void startTask(void *pvParameters)
 
 void task1(void *pvParameters)
 {
+    TickType_t* period = (TickType_t*)pvParameters;
     LED_Init(GPIOC, GPIO_Pin_13);
     while (1) {
         LED_Switch(GPIOC, GPIO_Pin_13);
-        vTaskDelay(50);
+        vTaskDelay(*period);
     }
 }
 
 void task2(void *pvParameters)
 {
     LED_Init(GPIOB, GPIO_Pin_12);
-    while (1) {
+    for (int i = 0; i < 10; i++) {
         LED_Switch(GPIOB, GPIO_Pin_12);
-        vTaskDelay(50);
+        vTaskDelay(500);
     }
+    vTaskDelete(Task2_Handler);
 }
