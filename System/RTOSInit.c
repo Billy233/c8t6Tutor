@@ -42,18 +42,8 @@ void task1(void *pvParameters) {
 }
 
 void task2(void *pvParameters) {
-    /* OLED_Init(); */
-    /* OLED_Clear(); */
-    /* OLED_ShowString(0, 0, "Pitch:", OLED_8X16); */
-    /* OLED_ShowString(0, 16, "Roll:", OLED_8X16); */
-    /* OLED_ShowString(0, 32, "Kalman Filter", OLED_8X16); */
-    /* OLED_Update(); */
     LED_Init(GPIOB, GPIO_Pin_12);
     while (1) {
-        /* Angle_Cal(); */
-        /* OLED_ShowFloatNum(48, 0, pitch_kalman, 2, 3, OLED_8X16); */
-        /* OLED_ShowFloatNum(48, 16, roll_kalman, 2, 3, OLED_8X16); */
-        /* OLED_Update(); */
         LED_Switch(GPIOB, GPIO_Pin_12);
         vTaskDelay(50);
     }
